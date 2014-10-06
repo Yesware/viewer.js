@@ -85,11 +85,11 @@ test('load() should load assets when called', function () {
 
 test('destroy() should broadcast a destroy message when called', function () {
     this.stub(Crocodoc, 'Scope').returns(this.scope);
-    var viewer = new Crocodoc.Viewer('body', {});
+    var viewer = new Crocodoc.Viewer('body', { index: 0 });
 
     this.mock(this.scope)
         .expects('broadcast')
-        .withArgs('destroy');
+        .withArgs('destroy', { page: 1 });
 
     viewer.destroy();
 });

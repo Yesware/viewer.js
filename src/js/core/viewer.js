@@ -30,6 +30,7 @@
         var layout,
             $el = $(el),
             config = util.extend(true, {}, Crocodoc.Viewer.defaults, options),
+            pageNum = config.index + 1,
             scope = new Crocodoc.Scope(config),
             viewerBase = scope.createComponent('viewer-base');
 
@@ -61,7 +62,7 @@
             delete instances[config.id];
 
             // broadcast a destroy message
-            scope.broadcast('destroy');
+            scope.broadcast('destroy', { page: pageNum });
 
             // destroy all components and plugins in this scope
             scope.destroy();

@@ -286,7 +286,8 @@ viewer.on('ready', function (event) {
     * `error` - the error message
     * `resource` - the url of the resource that failed to load
     * `status` - the http status code
-* `destroy` Triggered when the document viewer is purposely destroyed with the destroy method.
+* `destroy` Triggered when the document viewer is purposely destroyed with the destroy method. Event properties:
+    * `page` - the current page
 * `fail` Triggered if the document fails to load. Event properties:
     * `error` - the error details
 * `ready` Triggered as soon as a document becomes viewable. Event properties:
